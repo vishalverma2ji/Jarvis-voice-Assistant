@@ -6,10 +6,10 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 import webbrowser
 import openai
-
-openai.api_key = "your_api_key_here"  # 🔒 Replace with environment variable in production
-
+import os
+api_key = os.getenv("OPENAI_API_KEY")
 # ✅ Speak function with TTS
+
 def speak(text):
     print("Assistant:", text)
     engine = pyttsx3.init('sapi5')
